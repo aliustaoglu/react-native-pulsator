@@ -38,10 +38,11 @@ And if the tests are not compiling. Simpy remove them. Anyway it's just a boiler
 
 Now close the Example app (RNPulsator.xcworkspace) and open the main project (RNPReactNativePulsator.xcworkspace)
 
-Add 3 files:
+Add 4 files:
 
 RNPulsatorViewController.swift
 RNPulsatorView.swift
+NativeBridge.m
 RNPReactNativePulsator-Bridging-Header.h (xcode creates this automatically for you)
 
 We are not going to make our changes using this project. We only need to switch to this project only when we need to add new files. The reason we do it is because if we add a new file from inside the pods, pbxproj file won't be updated.

@@ -1,5 +1,5 @@
 import { requireNativeComponent } from 'react-native';
 
-const RNPReactNativePulsator = requireNativeComponent('RNPReactNativePulsator', null);
+const RNPulsatorViewController = requireNativeComponent('RNPulsatorViewController', null);
 
-export default RNPReactNativePulsator;
+export default RNPulsatorViewController;

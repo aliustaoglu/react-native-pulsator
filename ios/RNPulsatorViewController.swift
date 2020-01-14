@@ -7,3 +7,15 @@
 //
 
 import Foundation
+
+@objc(RNPulsatorViewController)
+class RNPulsatorViewController: RCTViewManager {
+    var pulsatorView: RNPulsatorView!
+    
+    override func view() -> UIView? {
+        pulsatorView = RNPulsatorView()
+        return pulsatorView
+    }
+    
+
+}

@@ -9,37 +9,20 @@
  */
 
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
-import RNPReactNativePulsator from 'react-native-pulsator';
+import { Platform, StyleSheet, Text, View, NativeModules } from 'react-native';
+import RNPulsator from 'react-native-pulsator';
 
-export default class App extends Component<{}> {
+export default class App extends Component {
   render() {
+    console.log(NativeModules)
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>☆RNPReactNativePulsator example☆</Text>
-        <Text style={styles.instructions}>STATUS: loaded</Text>
-        <Text style={styles.welcome}>☆☆☆</Text>
-        <RNPReactNativePulsator />
+      <View style={{ marginTop: 120, marginLeft: 100, width: 100, height: 100  }}>
+        <RNPulsator>
+          <View style={{ backgroundColor: 'red', width: 50, height: 50 }}>
+          <Text>D</Text>
+          </View>
+        </RNPulsator>
       </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
