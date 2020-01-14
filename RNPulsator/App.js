@@ -8,18 +8,22 @@
  * https://github.com/facebook/react-native
  */
 
-import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View, NativeModules } from 'react-native';
+import React, {Component} from 'react';
+import {Platform, StyleSheet, Text, View, NativeModules} from 'react-native';
 import RNPulsator from 'react-native-pulsator';
 
 export default class App extends Component {
   render() {
-    console.log(NativeModules)
     return (
-      <View style={{ marginTop: 120, marginLeft: 100, width: 100, height: 100  }}>
-        <RNPulsator>
-          <View style={{ backgroundColor: 'red', width: 50, height: 50 }}>
-          <Text>D</Text>
+      <View style={{marginTop: 120, marginLeft: 100, width: 100, height: 100}}>
+        <RNPulsator
+          color="#FF5733"
+          numPulse={15}
+          repeatCount={3}
+          radius={240.3}
+          offset={{x: 50, y: 10}}>
+          <View style={{backgroundColor: 'red', width: 50, height: 50}}>
+            <Text>D</Text>
           </View>
         </RNPulsator>
       </View>

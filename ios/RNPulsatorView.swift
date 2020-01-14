@@ -9,29 +9,78 @@
 import Foundation
 import Pulsator
 
+let pulsator = Pulsator()
+
 class RNPulsatorView: UIView {
+    @objc var color: NSString = "" {
+        didSet{
+            pulsator.backgroundColor = hexStringToCGColor(hex: color as String)
+        }
+    }
+    
+    @objc var animationDuration: NSNumber = 0 {
+        didSet{
+            pulsator.animationDuration = TimeInterval(truncating: animationDuration)
+        }
+    }
+    
+    @objc var pulseInterval: NSNumber = 0 {
+        didSet{
+            pulsator.pulseInterval = TimeInterval(truncating: pulseInterval)
+        }
+    }
+    
+    @objc var repeatCount: NSNumber = 0 {
+        didSet{
+            pulsator.repeatCount = Float(truncating: repeatCount)
+        }
+    }
+    
+    @objc var numPulse: NSNumber = 0 {
+        didSet{
+            pulsator.numPulse = Int(truncating: numPulse)
+        }
+    }
+    
+    @objc var radius: NSNumber = 0 {
+        didSet{
+            pulsator.radius = CGFloat(truncating: radius)
+        }
+    }
+    
+    @objc var offset: NSDictionary = [:] {
+        didSet{
+            
+        }
+    }
+    
     init() {
         super.init(frame: CGRect())
         self.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.autoresizesSubviews = true
     }
     
-    override func didMoveToWindow() {
-        
-    }
-    
     override func layoutSubviews() {
-        let pulsator = Pulsator()
         let subview = self.subviews[0]
-        let x = subview.frame.size.width/2
-        let y = subview.frame.size.height/2
+        var offsetX = 0.0
+        var offsetY = 0.0
+        if (self.offset.object(forKey: "x") != nil) {
+            offsetX = self.offset.object(forKey: "x") as! Double
+        }
+        if (self.offset.object(forKey: "y") != nil) {
+            offsetY = self.offset.object(forKey: "y") as! Double
+        }
+        let x = subview.frame.size.width/2 + CGFloat(offsetX)
+        let y = subview.frame.size.height/2 + CGFloat(offsetY)
         pulsator.position = CGPoint(x: x, y: y)
-        pulsator.backgroundColor = hexStringToUIColor(hex: "#342341").cgColor
         subview.layer.addSublayer(pulsator)
         pulsator.start()
     }
     
-
+    func hexStringToCGColor (hex:String) -> CGColor {
+        return hexStringToUIColor(hex: hex).cgColor
+    }
+    
     func hexStringToUIColor (hex:String) -> UIColor {
         var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
 
