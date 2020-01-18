@@ -1,43 +1,61 @@
 # react-native-pulsator
 
+Pulsator for React Native. This library binds iOS and Android libraries from below repositories:
+
+iOS: https://github.com/shu223/Pulsator
+Android: https://github.com/booncol/Pulsator4Droid
+
+
 ## Getting started
 
-`$ npm install react-native-pulsator --save`
+`$ yarn add react-native-pulsator`
 
-### Mostly automatic installation
+And that's it. React Native will link native libraries automatically. 
 
-`$ react-native link react-native-pulsator`
-
-### Manual installation
-
-
-#### iOS
-
-1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
-2. Go to `node_modules` ➜ `react-native-pulsator` and add `RNPReactNativePulsator.xcodeproj`
-3. In XCode, in the project navigator, select your project. Add `libRNPReactNativePulsator.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
-4. Run your project (`Cmd+R`)<
-
-#### Android
-
-1. Open up `android/app/src/main/java/[...]/MainApplication.java`
-  - Add `import biz.aliustaoglu.rnp.RNPReactNativePulsatorPackage;` to the imports at the top of the file
-  - Add `new RNPReactNativePulsatorPackage()` to the list returned by the `getPackages()` method
-2. Append the following lines to `android/settings.gradle`:
-  	```
-  	include ':react-native-pulsator'
-  	project(':react-native-pulsator').projectDir = new File(rootProject.projectDir, 	'../node_modules/react-native-pulsator/android')
-  	```
-3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
-  	```
-      compile project(':react-native-pulsator')
-  	```
-
+Wrap a child view with RNPulsator and the library will create pulsing effects from the center of the view.
 
 ## Usage
 ```javascript
-import RNPReactNativePulsator from 'react-native-pulsator';
+import RNPulsator from 'react-native-pulsator';
+import img from './img.png'
+// .....
 
-// TODO: What to do with the module?
-RNPReactNativePulsator;
+<View style={styles.container}>
+    <RNPulsator
+      color="#0075c4"
+      numPulse={1}
+      animationDuration={1}>
+      <View style={styles.imgContainer}>
+        <Image source={img} />
+      </View>
+    </RNPulsator>
+</View>
+
+
+
 ```
+
+## Props
+
+### color
+
+The colour of the pulse
+
+### numPulse
+
+Number of pulses. In other words the number circles that are pulsing on each repeat.
+
+
+### animationDuration
+
+How long will each animation take in seconds.
+
+
+## DEMO
+
+### Android
+![Android](https://raw.githubusercontent.com/aliustaoglu/react-native-pulsator/master/RNPulsator/screenshots/android.gif)
+
+### iOS
+
+![iOS](https://raw.githubusercontent.com/aliustaoglu/react-native-pulsator/master/RNPulsator/screenshots/iOS.gif)

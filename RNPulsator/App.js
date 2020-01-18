@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {View, Image, StyleSheet} from 'react-native';
-import RNPulsator, {invokeNativeUIFunction} from 'react-native-pulsator';
+import RNPulsator from 'react-native-pulsator';
 import antenna from './img/antenna.png';
 
 const styles = {
