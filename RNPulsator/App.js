@@ -17,13 +17,13 @@ export default class App extends Component {
     return (
       <View style={{marginTop: 120, marginLeft: 100, width: 100, height: 100}}>
         <RNPulsator
-          color="#FF5733"
+          style={{ backgroundColor: 'red', width: 200, height: 200 }}
+          color="#ffffff"
           numPulse={15}
-          repeatCount={3}
           radius={240.3}
           offset={{x: 50, y: 10}}>
-          <View style={{backgroundColor: 'red', width: 50, height: 50}}>
-            <Text>D</Text>
+          <View>
+            <Text>Text</Text>
           </View>
         </RNPulsator>
       </View>

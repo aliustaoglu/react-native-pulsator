@@ -8,7 +8,7 @@
 
 import Foundation
 
-@objc(RNPulsatorViewController)
+@objc(RNPReactNativePulsator)
 class RNPulsatorViewController: RCTViewManager {
     var pulsatorView: RNPulsatorView!
     

@@ -1,16 +1,14 @@
 package biz.aliustaoglu.rnp;
 
-import android.view.View;
+import android.graphics.Color;
 
-// AppCompatCheckBox import for React Native pre-0.60:
-import android.support.v7.widget.AppCompatCheckBox;
-// AppCompatCheckBox import for React Native 0.60(+):
-// import androidx.appcompat.widget.AppCompatCheckBox;
-
-import com.facebook.react.uimanager.SimpleViewManager;
 import com.facebook.react.uimanager.ThemedReactContext;
+import com.facebook.react.uimanager.ViewGroupManager;
+import com.facebook.react.uimanager.annotations.ReactProp;
 
-public class RNPReactNativePulsatorManager extends SimpleViewManager<View> {
+import javax.annotation.Nullable;
+
+public class RNPReactNativePulsatorManager extends ViewGroupManager<RNPulsatorView> {
 
     public static final String REACT_CLASS = "RNPReactNativePulsator";
 
@@ -20,10 +18,18 @@ public class RNPReactNativePulsatorManager extends SimpleViewManager<View> {
     }
 
     @Override
-    public View createViewInstance(ThemedReactContext c) {
-        // TODO: Implement some actually useful functionality
-        AppCompatCheckBox cb = new AppCompatCheckBox(c);
-        cb.setChecked(true);
-        return cb;
+    public RNPulsatorView createViewInstance(ThemedReactContext c) {
+        RNPulsatorView rnPulsatorView = new RNPulsatorView(c);
+        return rnPulsatorView;
+    }
+
+    @ReactProp(name = "color")
+    public void setColor(RNPulsatorView rnPulsatorView, @Nullable String color){
+        rnPulsatorView.setColor(Color.parseColor(color));
+    }
+
+    @ReactProp(name = "numPulse")
+    public void setNumPulse(RNPulsatorView rnPulsatorView, @Nullable Integer numPulse){
+        rnPulsatorView.setCount(numPulse);
     }
 }

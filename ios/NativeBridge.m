@@ -2,7 +2,7 @@
 #import "React/RCTViewManager.h"
 
 
-@interface RCT_EXTERN_MODULE(RNPulsatorViewController, RCTViewManager)
+@interface RCT_EXTERN_MODULE(RNPReactNativePulsator, RCTViewManager)
     RCT_EXPORT_VIEW_PROPERTY(color, NSString)
     RCT_EXPORT_VIEW_PROPERTY(animationDuration, NSNumber)
     RCT_EXPORT_VIEW_PROPERTY(pulseInterval, NSNumber)
