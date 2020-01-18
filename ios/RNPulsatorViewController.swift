@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Pulsator
 
 @objc(RNPReactNativePulsator)
 class RNPulsatorViewController: RCTViewManager {
@@ -15,6 +16,11 @@ class RNPulsatorViewController: RCTViewManager {
     override func view() -> UIView? {
         pulsatorView = RNPulsatorView()
         return pulsatorView
+    }
+    
+    @objc
+    func setPulsator(_ isSet:Bool, resolve:RCTPromiseResolveBlock, reject:RCTPromiseRejectBlock){
+        let pulsator = pulsatorView.pulsator!
     }
     
 

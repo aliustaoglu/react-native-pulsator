@@ -32,4 +32,10 @@ public class RNPReactNativePulsatorManager extends ViewGroupManager<RNPulsatorVi
     public void setNumPulse(RNPulsatorView rnPulsatorView, @Nullable Integer numPulse){
         rnPulsatorView.setCount(numPulse);
     }
+
+    @ReactProp(name = "animationDuration")
+    public void setAnimationDuration(RNPulsatorView rnPulsatorView, @Nullable Integer animationDuration){
+        rnPulsatorView.setDuration(animationDuration * 1000);
+
+    }
 }

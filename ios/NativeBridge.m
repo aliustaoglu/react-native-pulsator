@@ -10,5 +10,6 @@
     RCT_EXPORT_VIEW_PROPERTY(numPulse, NSNumber)
     RCT_EXPORT_VIEW_PROPERTY(radius, NSNumber)
     RCT_EXPORT_VIEW_PROPERTY(offset, NSDictionary)
+    RCT_EXTERN_METHOD(setPulsator:(nonnull BOOL *)isSet resolve:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject)
 
 @end

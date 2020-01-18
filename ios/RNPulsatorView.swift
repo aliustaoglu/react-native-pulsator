@@ -9,9 +9,8 @@
 import Foundation
 import Pulsator
 
-let pulsator = Pulsator()
-
 class RNPulsatorView: UIView {
+    public var pulsator: Pulsator!
     @objc var color: NSString = "" {
         didSet{
             pulsator.backgroundColor = hexStringToCGColor(hex: color as String)
@@ -58,6 +57,7 @@ class RNPulsatorView: UIView {
         super.init(frame: CGRect())
         self.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.autoresizesSubviews = true
+        self.pulsator = Pulsator()
     }
     
     override func layoutSubviews() {
@@ -74,7 +74,7 @@ class RNPulsatorView: UIView {
         let y = subview.frame.size.height/2 + CGFloat(offsetY)
         pulsator.position = CGPoint(x: x, y: y)
         subview.layer.addSublayer(pulsator)
-        pulsator.start()
+        self.pulsator.start()
     }
     
     func hexStringToCGColor (hex:String) -> CGColor {
@@ -102,6 +102,8 @@ class RNPulsatorView: UIView {
             alpha: CGFloat(1.0)
         )
     }
+    
+
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
