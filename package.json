@@ -1,8 +1,8 @@
 {
   "name": "react-native-pulsator",
   "title": "React Native Pulsator",
-  "version": "1.0.0",
-  "description": "TODO",
+  "version": "0.5.0",
+  "description": "Pulsing effects for React Native",
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
@@ -17,8 +17,7 @@
     "react-native"
   ],
   "author": {
-    "name": "Cuneyt Aliustaoglu",
-    "email": "aliustaoglu@yahoo.com"
+    "name": "Cuneyt Aliustaoglu"
   },
   "license": "MIT",
   "licenseFilename": "LICENSE",
