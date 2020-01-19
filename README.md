@@ -53,9 +53,17 @@ How long will each animation take in seconds.
 
 ## DEMO
 
-### Android
-![Android](https://raw.githubusercontent.com/aliustaoglu/react-native-pulsator/master/RNPulsator/screenshots/android.gif)
-
-### iOS
-
-![iOS](https://raw.githubusercontent.com/aliustaoglu/react-native-pulsator/master/RNPulsator/screenshots/iOS.gif)
+<table>
+<tr>
+	<th>Android</th>
+	<th>iOS</th>
+</tr>
+<tr>
+	<td>
+	<img src="https://raw.githubusercontent.com/aliustaoglu/react-native-pulsator/master/RNPulsator/screenshots/android.gif" width=400 />
+	</td>
+	<td>
+		<img src="https://raw.githubusercontent.com/aliustaoglu/react-native-pulsator/master/RNPulsator/screenshots/iOS.gif" width="400" />
+	</td>
+</tr>
+</table>
